@@ -5,7 +5,7 @@ A sleek, responsive, and professional portfolio website built using **React.js**
 ---
 
 ## 🚀 Preview
-[Portfolio Preview](/preview.gif)
+[Portfolio Preview](/preview.mp4)
 
 ---
 
