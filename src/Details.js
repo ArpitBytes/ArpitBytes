@@ -7,10 +7,8 @@ import profile from "./assets/profile.png";
 // Tech stack images
 import html from "./assets/techstack/html.png";
 import css from "./assets/techstack/css.png";
-// import sass from "./assets/techstack/sass.png";
 import js from "./assets/techstack/js.png";
 import react from "./assets/techstack/react.png";
-// import redux from "./assets/techstack/redux.png";
 import tailwind from "./assets/techstack/tailwind.png";
 import bootstrap from "./assets/techstack/bootstrap.png";
 import vscode from "./assets/techstack/vscode.png";
@@ -25,18 +23,18 @@ import Nodejs from "./assets/techstack/Nodejs.png";
 import express from "./assets/techstack/express.png";
 import mongoDB from "./assets/techstack/mongoDB.png";
 
-// Porject Images
+
 import projectImage1 from "./assets/projects/project1.jpg";
 import projectImage2 from "./assets/projects/project2.jpg";
 import projectImage3 from "./assets/projects/project3.jpg";
 
-// Logos
+
 export const logos = {
   logogradient: logogradient,
   logo: logo,
 };
 
-// Enter your Personal Details here
+//Personal Details
 export const personalDetails = {
   name: "Arpit Gupta",
   tagline: "Turning ideas into scalable web solutions.",
@@ -50,14 +48,14 @@ I’m also passionate about learning emerging technologies such as Artificial In
 I thrive in collaborative environments, value problem-solving, and enjoy transforming complex ideas into impactful digital products that deliver real-world results.`,
 };
 
-// Enter your Social Media URLs here
+//Social Media URLs here
 export const socialMediaUrl = {
   linkdein: "https://www.linkedin.com/in/arpit-gupta2312",
   github: "https://github.com/ArpitBytes",
   twitter: "https://leetcode.com/u/ArpitBytes/",
 };
 
-// Enter your Work Experience here
+//Work Experience here
 export const workDetails = [
   {
     Position: "Frontend Web Developer",
@@ -76,7 +74,7 @@ export const workDetails = [
  
 ];
 
-// Enter your Education Details here
+//Education Details here
 export const eduDetails = [
   {
     Position: "Bachelor of Technology in Computer Science",
@@ -122,7 +120,7 @@ export const techStackDetails = {
   Java: Java,
 };
 
-// Enter your Project Details here
+//Project Details here
 export const projectDetails = [
   {
     title: "My CareLabs International",
@@ -150,7 +148,7 @@ export const projectDetails = [
   },
 ];
 
-// Enter your Contact Details here
+//Contact Details here
 export const contactDetails = {
   email: "guptaarpit2312@gmail.com",
   phone: "+91 7742034222",
