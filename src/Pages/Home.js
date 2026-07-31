@@ -1,4 +1,4 @@
-import React, { useRef, useEffect, useState } from "react";
+import React, { useRef, useEffect, useState, useCallback } from "react";
 import { useNavigate } from "react-router-dom";
 import gsap from "gsap";
 import { personalDetails } from "../Details";
@@ -13,7 +13,7 @@ function Home() {
   const transitionTimerRef = useRef(null);
   const [isTransitioning, setIsTransitioning] = useState(false);
 
-  const goToNextPage = () => {
+  const goToNextPage = useCallback(() => {
     if (isTransitioning) {
       return;
     }
@@ -22,6 +22,14 @@ function Home() {
     transitionTimerRef.current = window.setTimeout(() => {
       navigate("/about");
     }, 300);
+  }, [isTransitioning, navigate]);
+
+  const handleInteraction = (event) => {
+    if (event.type === "keydown" && event.key !== "Enter") {
+      return;
+    }
+
+    goToNextPage();
   };
 
   useEffect(() => {
@@ -95,12 +103,9 @@ function Home() {
       className={`container mx-auto max-width section md:flex justify-between items-center cursor-pointer page-transition ${
         isTransitioning ? "page-slide-out-left" : "page-slide-in-right"
       }`}
-      onClick={goToNextPage}
-      onKeyDown={(event) => {
-        if (event.key === "Enter") {
-          goToNextPage();
-        }
-      }}
+      onClick={handleInteraction}
+      onTouchEnd={handleInteraction}
+      onKeyDown={handleInteraction}
       role="main"
       tabIndex={0}
     >
