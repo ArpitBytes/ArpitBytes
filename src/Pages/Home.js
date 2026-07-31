@@ -48,7 +48,7 @@ function Home() {
         transitionTimerRef.current = null;
       }
     };
-  }, [navigate]);
+  }, [goToNextPage]);
 
   useEffect(() => {
     const tl = gsap.timeline();
