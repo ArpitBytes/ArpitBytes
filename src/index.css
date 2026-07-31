@@ -21,6 +21,26 @@
 body {
   overflow-x: hidden;
 }
+.page-transition {
+  transition: transform 0.35s ease, opacity 0.35s ease;
+}
+.page-slide-in-right {
+  animation: slideInFromRight 0.35s ease forwards;
+}
+.page-slide-out-left {
+  transform: translateX(-100%);
+  opacity: 0;
+}
+@keyframes slideInFromRight {
+  from {
+    opacity: 0;
+    transform: translateX(100%);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
 /* Hide scrollbar for Chrome, Safari and Opera */
 body::-webkit-scrollbar {
   display: none;

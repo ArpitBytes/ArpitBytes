@@ -1,13 +1,47 @@
-import React, { useRef, useEffect } from "react";
+import React, { useRef, useEffect, useState } from "react";
+import { useNavigate } from "react-router-dom";
 import gsap from "gsap";
 import { personalDetails } from "../Details";
 
 function Home() {
+  const navigate = useNavigate();
   const { name, tagline, img } = personalDetails;
   const h11 = useRef();
   const h12 = useRef();
   const h13 = useRef();
   const myimageref = useRef();
+  const transitionTimerRef = useRef(null);
+  const [isTransitioning, setIsTransitioning] = useState(false);
+
+  const goToNextPage = () => {
+    if (isTransitioning) {
+      return;
+    }
+
+    setIsTransitioning(true);
+    transitionTimerRef.current = window.setTimeout(() => {
+      navigate("/about");
+    }, 300);
+  };
+
+  useEffect(() => {
+    const handleKeyDown = (event) => {
+      if (event.key === "Enter") {
+        goToNextPage();
+      }
+    };
+
+    document.addEventListener("keydown", handleKeyDown);
+
+    return () => {
+      document.removeEventListener("keydown", handleKeyDown);
+      if (transitionTimerRef.current) {
+        window.clearTimeout(transitionTimerRef.current);
+        transitionTimerRef.current = null;
+      }
+    };
+  }, [navigate]);
+
   useEffect(() => {
     const tl = gsap.timeline();
     tl.from(
@@ -57,7 +91,19 @@ function Home() {
   }, []);
 
   return (
-    <main className="container mx-auto max-width section md:flex justify-between items-center">
+    <main
+      className={`container mx-auto max-width section md:flex justify-between items-center cursor-pointer page-transition ${
+        isTransitioning ? "page-slide-out-left" : "page-slide-in-right"
+      }`}
+      onClick={goToNextPage}
+      onKeyDown={(event) => {
+        if (event.key === "Enter") {
+          goToNextPage();
+        }
+      }}
+      role="main"
+      tabIndex={0}
+    >
       <div>
         <h1
           ref={h11}
