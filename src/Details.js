@@ -137,12 +137,12 @@ export const projectDetails = [
     githubLink: "https://github.com/chirayumishra24/companio",
   },
   {
-    title: "DreamForge - AI-Powered Construction Management Platform",
+    title: "Bookit- A Complete Event booking Platform",
     image: projectImage3,
-    description: `DreamForge is an intelligent, full-stack MERN web application designed to revolutionize the construction and real-estate ecosystem. It empowers landowners, architects, engineers, and administrators to collaborate, plan, and execute projects seamlessly — all through an AI-driven digital platform`,
-    techstack: "HTML/CSS, JavaScript, React.js, Node.js, Express.js, MongoDB, Open AI Integration, MongoDB",
-    githubLink: "https://github.com",
-    previewLink: ""
+    description: `BookIt is a modern MERN-based event booking application that simplifies event discovery, registration, and booking. It features secure user authentication, responsive design, and an intuitive interface for seamless user and organiser experience.`,
+    techstack: "JavaScript, React.js, Node.js, Express.js, MongoDB, Open AI Integration, MongoDB, Prisma ORM, JWT Authentication, CSS3, Docker, Git, REST APIs",
+    githubLink: "https://github.com/ArpitBytes/BookIt",
+    previewLink: "https://book-it-blond.vercel.app/"
 
   },
 ];
